@@ -1,0 +1,35 @@
+!SESSION 2024-10-02 07:55:05.497 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Temp\230240\MKS\MKS_1\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Temp\230240\MKS\MKS_1\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-02 07:55:28.099
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-02 07:55:28.159
+!MESSAGE Log4j2 initialized with config file C:\Temp\230240\MKS\MKS_1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-02 07:55:32.174
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-10-02 07:58:37.975 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Temp\230240\MKS\MKS_1\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Temp\230240\MKS\MKS_1\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-02 07:58:46.613
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-02 07:58:46.615
+!MESSAGE Log4j2 initialized with config file C:\Temp\230240\MKS\MKS_1\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-02 07:58:50.424
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-10-02 07:58:59.011
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39
