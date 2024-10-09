@@ -57,7 +57,7 @@ void sct_init(void)
 
 void sct_led(uint32_t value)
 {
-	for( uint8_t i=0 ; i < 32 ; i++)
+	for (uint8_t i = 0; i < 32; i++)
 	{
 		HAL_GPIO_WritePin(SCT_SDI_GPIO_Port, SCT_SDI_Pin, value & 1);
 		value >>= 1;
