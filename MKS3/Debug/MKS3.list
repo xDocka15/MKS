@@ -289,7 +289,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  int value = __HAL_TIM_GET_COUNTER(&htim1);
+	  uint32_t value = __HAL_TIM_GET_COUNTER(&htim1);
  8000258:	4b06      	ldr	r3, [pc, #24]	@ (8000274 <main+0x54>)
  800025a:	681b      	ldr	r3, [r3, #0]
  800025c:	6a5b      	ldr	r3, [r3, #36]	@ 0x24
@@ -870,7 +870,7 @@ void sct_led(uint32_t value)
  800057e:	b084      	sub	sp, #16
  8000580:	af00      	add	r7, sp, #0
  8000582:	6078      	str	r0, [r7, #4]
-	for( uint8_t i=0 ; i < 32 ; i++)
+	for (uint8_t i = 0; i < 32; i++)
  8000584:	230f      	movs	r3, #15
  8000586:	18fb      	adds	r3, r7, r3
  8000588:	2200      	movs	r2, #0
@@ -903,7 +903,7 @@ void sct_led(uint32_t value)
  80005b8:	2108      	movs	r1, #8
  80005ba:	0018      	movs	r0, r3
  80005bc:	f000 fc1e 	bl	8000dfc <HAL_GPIO_WritePin>
-	for( uint8_t i=0 ; i < 32 ; i++)
+	for (uint8_t i = 0; i < 32; i++)
  80005c0:	210f      	movs	r1, #15
  80005c2:	187b      	adds	r3, r7, r1
  80005c4:	781a      	ldrb	r2, [r3, #0]
