@@ -30,7 +30,7 @@
 static uint8_t uart_rx_buf[RX_BUFFER_LEN];
 static volatile uint16_t uart_rx_read_ptr = 0;
 #define uart_rx_write_ptr (RX_BUFFER_LEN - hdma_usart2_rx.Instance->CNDTR)
-#define EEPROM_ADDR = 0xA0
+#define EEPROM_ADDR 0xA0
 
 /* USER CODE END Includes */
 
@@ -86,6 +86,7 @@ static void uart_process_command(char *cmd)
 	uint16_t addr = 1;
 	uint8_t value = 0;
 	uint8_t value2[16];
+
 	char *token;
 	token = strtok(cmd, " ");
 	if (strcasecmp(token, "HELLO") == 0)
@@ -158,7 +159,6 @@ static void uart_process_command(char *cmd)
 				printf("\n");
 			}
 		}
-
 	}
 }
 
