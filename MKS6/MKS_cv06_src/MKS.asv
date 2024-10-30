@@ -1,0 +1,10 @@
+a = csvread("ntc.csv");
+
+r = a(:,2);
+ad = (r)./(r+10);
+t = a(:,1);
+
+ p = polyfit(ad, t, 10);
+plot(ad)
+
+ad2= 0:1024
