@@ -29,25 +29,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00005068  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000cd11  00000000  00000000  00005098  2**0
+ 13 .debug_info   0000cd0e  00000000  00000000  00005098  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001c63  00000000  00000000  00011da9  2**0
+ 14 .debug_abbrev 00001c4c  00000000  00000000  00011da6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000c70  00000000  00000000  00013a10  2**3
+ 15 .debug_aranges 00000c70  00000000  00000000  000139f8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 000009b7  00000000  00000000  00014680  2**0
+ 16 .debug_rnglists 000009b7  00000000  00000000  00014668  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00024352  00000000  00000000  00015037  2**0
+ 17 .debug_macro  00024352  00000000  00000000  0001501f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000e007  00000000  00000000  00039389  2**0
+ 18 .debug_line   0000e007  00000000  00000000  00039371  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000dc1dd  00000000  00000000  00047390  2**0
+ 19 .debug_str    000dc1dd  00000000  00000000  00047378  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  0012356d  2**0
+ 20 .comment      00000043  00000000  00000000  00123555  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00003c18  00000000  00000000  001235b0  2**2
+ 21 .debug_frame  00003c18  00000000  00000000  00123598  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000046  00000000  00000000  001271c8  2**0
+ 22 .debug_line_str 00000046  00000000  00000000  001271b0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -494,19 +494,21 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			{ '7', '8', '9', 'C' },
 			{ '*', '0', '#', 'D' },
 	};
-	if (key == 0) {
+	if (key == 0)
  80005f0:	4b47      	ldr	r3, [pc, #284]	@ (8000710 <HAL_TIM_PeriodElapsedCallback+0x128>)
  80005f2:	781b      	ldrb	r3, [r3, #0]
  80005f4:	b2db      	uxtb	r3, r3
  80005f6:	2b00      	cmp	r3, #0
  80005f8:	d13b      	bne.n	8000672 <HAL_TIM_PeriodElapsedCallback+0x8a>
-		if (HAL_GPIO_ReadPin(Col1_GPIO_Port, Col1_Pin) == GPIO_PIN_RESET) {
+	{
+		if (HAL_GPIO_ReadPin(Col1_GPIO_Port, Col1_Pin) == GPIO_PIN_RESET)
  80005fa:	2108      	movs	r1, #8
  80005fc:	4845      	ldr	r0, [pc, #276]	@ (8000714 <HAL_TIM_PeriodElapsedCallback+0x12c>)
  80005fe:	f001 f871 	bl	80016e4 <HAL_GPIO_ReadPin>
  8000602:	4603      	mov	r3, r0
  8000604:	2b00      	cmp	r3, #0
  8000606:	d107      	bne.n	8000618 <HAL_TIM_PeriodElapsedCallback+0x30>
+		{
 			key = keyboard[row][0];
  8000608:	4b43      	ldr	r3, [pc, #268]	@ (8000718 <HAL_TIM_PeriodElapsedCallback+0x130>)
  800060a:	781b      	ldrb	r3, [r3, #0]
@@ -516,13 +518,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  8000614:	4b3e      	ldr	r3, [pc, #248]	@ (8000710 <HAL_TIM_PeriodElapsedCallback+0x128>)
  8000616:	701a      	strb	r2, [r3, #0]
 		}
-		if (HAL_GPIO_ReadPin(Col2_GPIO_Port, Col2_Pin) == GPIO_PIN_RESET) {
+		if (HAL_GPIO_ReadPin(Col2_GPIO_Port, Col2_Pin) == GPIO_PIN_RESET)
  8000618:	2140      	movs	r1, #64	@ 0x40
  800061a:	483e      	ldr	r0, [pc, #248]	@ (8000714 <HAL_TIM_PeriodElapsedCallback+0x12c>)
  800061c:	f001 f862 	bl	80016e4 <HAL_GPIO_ReadPin>
  8000620:	4603      	mov	r3, r0
  8000622:	2b00      	cmp	r3, #0
  8000624:	d107      	bne.n	8000636 <HAL_TIM_PeriodElapsedCallback+0x4e>
+		{
 			key = keyboard[row][1];
  8000626:	4b3c      	ldr	r3, [pc, #240]	@ (8000718 <HAL_TIM_PeriodElapsedCallback+0x130>)
  8000628:	781b      	ldrb	r3, [r3, #0]
@@ -533,13 +536,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  8000632:	4b37      	ldr	r3, [pc, #220]	@ (8000710 <HAL_TIM_PeriodElapsedCallback+0x128>)
  8000634:	701a      	strb	r2, [r3, #0]
 		}
-		if (HAL_GPIO_ReadPin(Col3_GPIO_Port, Col3_Pin) == GPIO_PIN_RESET) {
+		if (HAL_GPIO_ReadPin(Col3_GPIO_Port, Col3_Pin) == GPIO_PIN_RESET)
  8000636:	2120      	movs	r1, #32
  8000638:	4836      	ldr	r0, [pc, #216]	@ (8000714 <HAL_TIM_PeriodElapsedCallback+0x12c>)
  800063a:	f001 f853 	bl	80016e4 <HAL_GPIO_ReadPin>
  800063e:	4603      	mov	r3, r0
  8000640:	2b00      	cmp	r3, #0
  8000642:	d107      	bne.n	8000654 <HAL_TIM_PeriodElapsedCallback+0x6c>
+		{
 			key = keyboard[row][2];
  8000644:	4b34      	ldr	r3, [pc, #208]	@ (8000718 <HAL_TIM_PeriodElapsedCallback+0x130>)
  8000646:	781b      	ldrb	r3, [r3, #0]
@@ -550,13 +554,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  8000650:	4b2f      	ldr	r3, [pc, #188]	@ (8000710 <HAL_TIM_PeriodElapsedCallback+0x128>)
  8000652:	701a      	strb	r2, [r3, #0]
 		}
-		if (HAL_GPIO_ReadPin(Col4_GPIO_Port, Col4_Pin) == GPIO_PIN_RESET) {
+		if (HAL_GPIO_ReadPin(Col4_GPIO_Port, Col4_Pin) == GPIO_PIN_RESET)
  8000654:	2110      	movs	r1, #16
  8000656:	482f      	ldr	r0, [pc, #188]	@ (8000714 <HAL_TIM_PeriodElapsedCallback+0x12c>)
  8000658:	f001 f844 	bl	80016e4 <HAL_GPIO_ReadPin>
  800065c:	4603      	mov	r3, r0
  800065e:	2b00      	cmp	r3, #0
  8000660:	d107      	bne.n	8000672 <HAL_TIM_PeriodElapsedCallback+0x8a>
+		{
 			key = keyboard[row][3];
  8000662:	4b2d      	ldr	r3, [pc, #180]	@ (8000718 <HAL_TIM_PeriodElapsedCallback+0x130>)
  8000664:	781b      	ldrb	r3, [r3, #0]
@@ -588,7 +593,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  8000694:	f44f 7180 	mov.w	r1, #256	@ 0x100
  8000698:	4822      	ldr	r0, [pc, #136]	@ (8000724 <HAL_TIM_PeriodElapsedCallback+0x13c>)
  800069a:	f001 f83b 	bl	8001714 <HAL_GPIO_WritePin>
-	switch (row) {
+	switch (row)
  800069e:	4b1e      	ldr	r3, [pc, #120]	@ (8000718 <HAL_TIM_PeriodElapsedCallback+0x130>)
  80006a0:	781b      	ldrb	r3, [r3, #0]
  80006a2:	2b03      	cmp	r3, #3
@@ -599,6 +604,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  80006b0:	080006d1 	.word	0x080006d1
  80006b4:	080006e3 	.word	0x080006e3
  80006b8:	080006f7 	.word	0x080006f7
+	{
 	case 0:
 		row = 1;
  80006bc:	4b16      	ldr	r3, [pc, #88]	@ (8000718 <HAL_TIM_PeriodElapsedCallback+0x130>)
