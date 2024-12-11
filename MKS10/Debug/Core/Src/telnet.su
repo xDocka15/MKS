@@ -1,0 +1,5 @@
+../Core/Src/telnet.c:47:13:http_client	48	static
+../Core/Src/telnet.c:74:13:telnet_process_command	544	static
+../Core/Src/telnet.c:162:13:telnet_byte_available	16	static
+../Core/Src/telnet.c:174:13:tcptelnet_thread	40	static
+../Core/Src/telnet.c:233:6:tcptelnet_init	16	static
